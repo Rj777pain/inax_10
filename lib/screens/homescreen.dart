@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inax/constants/constant.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -13,32 +14,28 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: EdgeInsets.symmetric(vertical: 5.0,horizontal: 25.0),
       child: ListView(
           children: [
-            Padding(
-                padding: EdgeInsets.only(bottom: 10.0),
-                child: TextField(
-
-                  //controller: _sController,
-                  decoration: InputDecoration(
-                      labelText: 'Name',
-
-                      hintText: 'Enter Name',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      )),
-                )),
-            Padding(
-                padding: EdgeInsets.only(top: 5.0, bottom: 30.0),
-                child: TextField(
-
-                  //controller: _sController,
-                  decoration: InputDecoration(
-                      labelText: 'Income',
-
-                      hintText: 'Enter Annual Income',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      )),
-                )),
+            customTextFormField("Name", "Enter name"),
+            customTextFormField("Income", "Enter annual income"),
+            customTextFormField("Age", "In years"),
+            customTextFormField("State", ""),
+            customTextFormField("Adhar number", ""),
+            customTextFormField("PAN Card number", ""),
+//            customTextFormField("State", ""),
+            SizedBox(height: 10,),
+            Center(
+              child: Container(
+                color: Colors.blue[800],
+                width: 200.0,
+                child: RaisedButton(
+//                  color: Colors.transparent,
+                elevation: 0.0,
+                  child: Text(
+                    "Submit",
+                    style: TextStyle(color: Colors.white, fontSize: 15.0),
+                  ),
+                ),
+              ),
+            ),
           ],
       ),
     );
